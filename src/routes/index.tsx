@@ -77,7 +77,7 @@ function Index() {
         <section id="sobre" className="mb-32 scroll-mt-28">
           <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tight mb-12 max-w-4xl leading-[1.05] text-balance">
             Transformando problemas complexos em produtos digitais{" "}
-            <span className="text-gradient-brand">estratégicos</span>.
+            <span className="text-brand">estratégicos</span>.
           </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
@@ -99,7 +99,7 @@ function Index() {
             </div>
 
             <div className="md:col-span-5 bg-card border border-border rounded-3xl p-8">
-              <h2 className="font-display text-xl font-semibold mb-6 text-gradient-brand inline-block">
+              <h2 className="font-display text-xl font-semibold mb-6 text-brand">
                 Minha abordagem de produto
               </h2>
               <ul className="space-y-3.5">
@@ -108,7 +108,7 @@ function Index() {
                     key={item}
                     className="flex items-center gap-3 text-sm text-foreground/85"
                   >
-                    <span className="size-1.5 rounded-full bg-gradient-brand shrink-0" />
+                    <span className="size-1.5 rounded-full bg-brand shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -120,7 +120,7 @@ function Index() {
         {/* Cases */}
         <section id="cases" className="mb-32 scroll-mt-28">
           <div className="border-t border-border pt-12 mb-16">
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-8 text-gradient-brand inline-block">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-8 text-brand">
               Cases & Experiência
             </h2>
             <div className="max-w-3xl space-y-5 text-muted-foreground leading-relaxed">
@@ -196,7 +196,7 @@ function Index() {
         {/* Contato */}
         <section id="contato" className="border-t border-border pt-24 scroll-mt-28">
           <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 tracking-tight text-gradient-brand inline-block">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 tracking-tight text-brand">
               Vamos conversar?
             </h2>
             <p className="text-muted-foreground font-medium tracking-wide uppercase text-sm">

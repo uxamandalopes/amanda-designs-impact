@@ -176,7 +176,7 @@ function Index() {
           </div>
 
           <a
-            href="https://www.linkedin.com/in/amandacristinalopes/"
+            href="https://www.figma.com/proto/XWi2ISKGtdxeRDK4QS0DoT/Product-Designer---Portfolio?node-id=32-13&t=P6R4vazo0rPNO39P-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=32%3A13"
             target="_blank"
             rel="noreferrer"
             className="group block relative"

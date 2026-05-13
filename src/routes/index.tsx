@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import portfolioCover from "@/assets/portfolio-cover.jpg";
 
 export const Route = createFileRoute("/")({
@@ -46,26 +47,40 @@ const approach = [
 ];
 
 function Index() {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       {/* Floating pill header */}
       <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
-        <nav className="flex items-center gap-2 px-2 py-2 bg-card/80 backdrop-blur-md border border-border rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+        <nav
+          className={`flex items-center gap-2 px-2 py-2 backdrop-blur-md border rounded-full transition-all duration-300 ${
+            scrolled
+              ? "bg-white/10 border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
+              : "bg-card/80 border-border shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+          }`}
+        >
           <a
             href="#sobre"
-            className="text-sm font-medium px-4 py-1.5 rounded-full hover:bg-secondary transition-colors"
+            className="text-sm font-medium px-4 py-1.5 rounded-full hover:bg-white/10 transition-colors"
           >
             Sobre mim
           </a>
           <a
             href="#cases"
-            className="text-sm font-medium px-4 py-1.5 rounded-full hover:bg-secondary transition-colors"
+            className="text-sm font-medium px-4 py-1.5 rounded-full hover:bg-white/10 transition-colors"
           >
             Cases
           </a>
           <a
             href="#contato"
-            className="text-sm font-medium px-4 py-1.5 rounded-full hover:bg-secondary transition-colors"
+            className="text-sm font-medium px-4 py-1.5 rounded-full hover:bg-white/10 transition-colors"
           >
             Contato
           </a>

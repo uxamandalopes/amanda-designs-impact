@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Portfólio Product Designer" },
+      { name: "description", content: "A product designer portfolio showcasing strategic experience in complex digital product development." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Portfólio Product Designer" },
+      { property: "og:description", content: "A product designer portfolio showcasing strategic experience in complex digital product development." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Portfólio Product Designer" },
+      { name: "twitter:description", content: "A product designer portfolio showcasing strategic experience in complex digital product development." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7fa4a7c0-9d2a-4d27-b385-50b7f6fbc1e3/id-preview-a91918ae--48ffee39-c19a-4bbd-9178-d7b2185de1d4.lovable.app-1778693317248.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7fa4a7c0-9d2a-4d27-b385-50b7f6fbc1e3/id-preview-a91918ae--48ffee39-c19a-4bbd-9178-d7b2185de1d4.lovable.app-1778693317248.png" },
     ],
     links: [
       {

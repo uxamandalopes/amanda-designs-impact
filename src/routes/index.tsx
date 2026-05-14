@@ -131,8 +131,7 @@ function Index() {
           </div>
 
           <div className="mt-16">
-            <h2 className="font-display text-sm font-semibold mb-8 text-brand uppercase tracking-[0.16em] flex items-center gap-3">
-              <span className="size-1.5 rounded-full bg-brand shadow-[0_0_10px_var(--brand)]" />
+            <h2 className="font-display text-[18px] font-semibold mb-8 text-brand uppercase tracking-[0.16em]">
               Minha abordagem de produto
             </h2>
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">

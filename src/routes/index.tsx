@@ -151,14 +151,10 @@ function Index() {
 
         {/* Cases */}
         <section id="cases" className="mb-40 scroll-mt-28">
-          <div className="flex items-end gap-6 mb-12">
+          <div className="mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-brand">
               Cases &amp; Experiência
             </h2>
-            <div className="flex-1 h-px bg-gradient-to-r from-white/15 to-transparent mb-3" />
-            <span className="hidden md:block text-[10px] uppercase tracking-[0.24em] text-muted-foreground/70 mb-3 font-mono">
-              Selected Works
-            </span>
           </div>
 
           <div className="max-w-3xl space-y-5 text-muted-foreground leading-relaxed mb-16">

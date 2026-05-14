@@ -113,44 +113,39 @@ function Index() {
             .
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-            <div className="md:col-span-7 space-y-6">
-              <p className="text-lg md:text-xl text-foreground/75 leading-relaxed">
-                Sou <span className="text-foreground font-medium">Amanda</span>, Product
-                Designer Sênior com 4+ anos de experiência no desenvolvimento de produtos
-                digitais B2B e B2C, conectando estratégia de negócio, tecnologia e
-                experiência do usuário para construir soluções com impacto real.
-              </p>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                Atuo em contextos complexos e orientados a dados, conduzindo iniciativas
-                end-to-end, da descoberta à entrega, com forte colaboração entre áreas,
-                mediação de stakeholders e foco em escalabilidade, eficiência operacional e
-                evolução contínua dos produtos. Meu background técnico fortalece minhas
-                trocas com engenharia e contribui para entregas mais alinhadas, estruturadas
-                e viáveis.
-              </p>
-            </div>
+          <div className="max-w-3xl space-y-6">
+            <p className="text-lg md:text-xl text-foreground/75 leading-relaxed">
+              Sou <span className="text-foreground font-medium">Amanda</span>, Product
+              Designer Sênior com 4+ anos de experiência no desenvolvimento de produtos
+              digitais B2B e B2C, conectando estratégia de negócio, tecnologia e
+              experiência do usuário para construir soluções com impacto real.
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              Atuo em contextos complexos e orientados a dados, conduzindo iniciativas
+              end-to-end, da descoberta à entrega, com forte colaboração entre áreas,
+              mediação de stakeholders e foco em escalabilidade, eficiência operacional e
+              evolução contínua dos produtos. Meu background técnico fortalece minhas
+              trocas com engenharia e contribui para entregas mais alinhadas, estruturadas
+              e viáveis.
+            </p>
+          </div>
 
-            <div className="md:col-span-5 group relative">
-              <div className="absolute -inset-px rounded-3xl bg-gradient-to-b from-brand/30 via-brand/5 to-transparent opacity-60 blur-md transition duration-700 group-hover:opacity-100" />
-              <div className="relative bg-white/[0.025] backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]">
-                <h2 className="font-display text-sm font-semibold mb-7 text-brand uppercase tracking-[0.16em] flex items-center gap-3">
-                  <span className="size-1.5 rounded-full bg-brand shadow-[0_0_10px_var(--brand)]" />
-                  Minha abordagem de produto
-                </h2>
-                <ul className="space-y-3.5">
-                  {approach.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-center gap-3 text-sm text-foreground/85 hover:text-foreground transition-colors"
-                    >
-                      <span className="size-1.5 rounded-full bg-brand shadow-[0_0_8px_var(--brand)] shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+          <div className="mt-16">
+            <h2 className="font-display text-sm font-semibold mb-8 text-brand uppercase tracking-[0.16em] flex items-center gap-3">
+              <span className="size-1.5 rounded-full bg-brand shadow-[0_0_10px_var(--brand)]" />
+              Minha abordagem de produto
+            </h2>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
+              {approach.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-center gap-3 text-sm md:text-base text-foreground/85 hover:text-foreground transition-colors py-3 border-b border-white/[0.06]"
+                >
+                  <span className="size-1.5 rounded-full bg-brand shadow-[0_0_8px_var(--brand)] shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 

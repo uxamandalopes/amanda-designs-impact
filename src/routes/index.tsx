@@ -210,7 +210,7 @@ function Index() {
               </div>
               <div className="p-8 flex items-center justify-between gap-6">
                 <div>
-                  <h3 className="text-xl md:text-2xl font-sans font-semibold mb-2 tracking-tight">
+                  <h3 className="text-[18px] font-sans font-semibold mb-2 tracking-tight">
                     Acesse meu portfólio completo
                   </h3>
                   <p className="text-muted-foreground text-sm md:text-base">

@@ -97,13 +97,6 @@ function Index() {
       <main className="max-w-6xl mx-auto px-6 pt-40 pb-24">
         {/* Sobre Mim */}
         <section id="sobre" className="mb-40 scroll-mt-28">
-          <div className="inline-flex items-center gap-2 mb-8 px-3.5 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm">
-            <span className="size-1.5 rounded-full bg-brand shadow-[0_0_10px_var(--brand)] animate-pulse" />
-            <span className="text-[11px] uppercase tracking-[0.18em] text-foreground/70 font-medium">
-              Disponível para novos desafios
-            </span>
-          </div>
-
           <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tight mb-14 max-w-4xl leading-[1.04] text-balance">
             Transformando problemas complexos em produtos digitais{" "}
             <span className="relative text-brand">

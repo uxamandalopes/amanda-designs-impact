@@ -248,7 +248,7 @@ function Index() {
                 ux.amandalopes@gmail.com
               </a>
               <a
-                href="https://drive.google.com/file/d/1sqVri8qCDTvYG8VbZt5Ev6Z9VQUKrC_Y/view?usp=sharing"
+                href="https://drive.google.com/file/d/1S_6FPUhZs5zQvaIX3Xt8nJTU4RM-1Q9T/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
                 className="px-7 py-4 bg-brand text-brand-foreground rounded-full text-sm font-bold tracking-tight hover:shadow-[0_0_28px_var(--brand)] transition-all hover:-translate-y-0.5"

@@ -106,7 +106,7 @@ const essay = {
 function Essay() {
   return (
     <div>
-      <h1 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-brand mb-8 leading-[1.12]">
+      <h1 className="font-display text-2xl md:text-[34px] font-bold tracking-tight text-brand mb-6 leading-[1.15]">
         {essay.title}
       </h1>
 
@@ -170,42 +170,68 @@ function Index() {
             {/* Direita — acesso ao portfólio com thumbnail */}
             <div className="lg:col-span-5">
               <div className="lg:sticky lg:top-32">
-              <a
-                href={FIGMA_LINK}
-                target="_blank"
-                rel="noreferrer"
-                className="group block relative"
-              >
-                <div className="absolute -inset-px rounded-[28px] bg-gradient-to-b from-brand/30 via-brand/10 to-transparent opacity-50 blur-md transition duration-700 group-hover:opacity-100" />
-                <div className="relative overflow-hidden rounded-[28px] bg-white/[0.025] backdrop-blur-xl border border-white/10 transition-all duration-500 group-hover:border-brand/40">
-                  <div className="w-full aspect-[4/3] overflow-hidden">
-                    <img
-                      src={portfolioCover}
-                      alt="Capa do portfólio de cases de Amanda Lopes"
-                      className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="p-7">
-                    <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand mb-3">
-                      Portfólio
-                    </p>
-                    <h3 className="font-sans text-[18px] font-semibold mb-2 tracking-tight">
-                      Acesse meu portfólio completo
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      Confira o detalhamento dos processos, decisões e resultados dos
-                      projetos.
-                    </p>
-                    <div className="mt-6 flex items-center gap-3 text-sm font-semibold text-brand">
-                      <span>Ver no Figma</span>
-                      <span className="size-9 rounded-full border border-white/15 flex items-center justify-center text-foreground transition-all duration-300 group-hover:bg-brand group-hover:border-brand group-hover:text-brand-foreground group-hover:shadow-[0_0_24px_var(--brand)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                <a
+                  href={FIGMA_LINK}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group relative block -rotate-[1.6deg] transition-transform duration-500 ease-out hover:rotate-0"
+                >
+                  {/* pilha de cards atrás */}
+                  <div className="pointer-events-none absolute -bottom-2 left-4 right-[-10px] h-full rounded-[22px] border border-white/[0.06] bg-white/[0.02]" />
+                  <div className="pointer-events-none absolute -bottom-1 left-2 right-[-5px] h-full rounded-[22px] border border-white/[0.08] bg-white/[0.03]" />
+
+                  {/* glow */}
+                  <div className="pointer-events-none absolute -inset-4 rounded-[30px] bg-gradient-to-b from-brand/25 via-brand/5 to-transparent opacity-50 blur-2xl transition duration-700 group-hover:opacity-100" />
+
+                  <div className="relative overflow-hidden rounded-[22px] border border-white/10 bg-[#0b1116] shadow-[0_36px_90px_-40px_rgba(0,0,0,0.95)] transition-colors duration-500 group-hover:border-brand/40">
+                    {/* barra da janela */}
+                    <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.03] px-4 py-3">
+                      <span className="size-2 rounded-full bg-brand/80" />
+                      <span className="size-2 rounded-full bg-white/20" />
+                      <span className="size-2 rounded-full bg-white/20" />
+                      <span className="ml-2 flex-1 truncate rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                        figma.com · portfolio
+                      </span>
+                    </div>
+
+                    {/* thumbnail */}
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <img
+                        src={portfolioCover}
+                        alt="Capa do portfólio de cases de Amanda Lopes"
+                        className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.07]"
+                        loading="lazy"
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-75 transition-opacity duration-500 group-hover:opacity-90" />
+
+                      {/* CTA que surge no hover */}
+                      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                        <span className="flex translate-y-4 items-center gap-2 rounded-full bg-brand px-5 py-3 text-[13px] font-bold tracking-tight text-brand-foreground opacity-0 shadow-[0_0_34px_var(--brand)] transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                          Abrir portfólio
+                          <span aria-hidden>→</span>
+                        </span>
+                      </div>
+
+                      {/* brilho que atravessa */}
+                      <div className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/[0.14] to-transparent opacity-0 transition-all duration-[900ms] ease-out group-hover:translate-x-[360%] group-hover:opacity-100" />
+                    </div>
+
+                    {/* rodapé do card */}
+                    <div className="flex items-center justify-between gap-4 border-t border-white/10 bg-white/[0.02] px-5 py-4">
+                      <div>
+                        <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-brand">
+                          Portfólio
+                        </p>
+                        <p className="mt-1 font-sans text-[15px] font-semibold tracking-tight">
+                          Acesse meu portfólio completo
+                        </p>
+                      </div>
+                      <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-white/15 text-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:border-brand group-hover:bg-brand group-hover:text-brand-foreground group-hover:shadow-[0_0_24px_var(--brand)]">
                         →
                       </span>
                     </div>
                   </div>
-                </div>
-              </a>
+                </a>
               </div>
             </div>
           </div>
@@ -213,18 +239,18 @@ function Index() {
 
         {/* Contato */}
         <section id="contato" className="scroll-mt-28">
-          <div className="relative rounded-[36px] border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent backdrop-blur-xl px-6 py-20 overflow-hidden">
-            <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[520px] h-[260px] rounded-full bg-brand/15 blur-[120px]" />
-            <div className="relative text-center mb-12">
-              <h2 className="font-display text-4xl md:text-6xl font-bold mb-4 tracking-tight text-brand">
+          <div className="relative rounded-[26px] border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent backdrop-blur-xl px-6 py-10 overflow-hidden">
+            <div className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[380px] h-[180px] rounded-full bg-brand/12 blur-[110px]" />
+            <div className="relative text-center mb-8">
+              <h2 className="font-display text-2xl md:text-[28px] font-bold mb-2 tracking-tight text-brand">
                 Vamos conversar?
               </h2>
-              <p className="text-muted-foreground font-medium tracking-[0.18em] uppercase text-xs">
+              <p className="text-muted-foreground font-medium tracking-[0.18em] uppercase text-[10px]">
                 Aberta a novos desafios
               </p>
             </div>
 
-            <div className="relative flex flex-wrap justify-center gap-3">
+            <div className="relative flex flex-wrap justify-center gap-2.5">
               <a
                 href="https://www.linkedin.com/in/amandacristinalopes/"
                 target="_blank"

@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
 import portfolioCover from "@/assets/portfolio-cover.jpg";
 
 export const Route = createFileRoute("/")({
@@ -49,17 +48,125 @@ const approach = [
   "IA aplicada a produtos digitais",
 ];
 
-function Index() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+type Block =
+  | { kind: "p"; text: string }
+  | { kind: "q"; text: string }
+  | { kind: "a"; text: string };
 
+const essay = {
+  title: "O design que acontece fora do Figma.",
+  lead: "Fiquei pensando em como criar um portfólio que realmente fizesse sentido com a realidade do meu trabalho e que não precisasse parecer tão sério.",
+  motto: "Design é arte de pensar.",
+  blocks: [
+    {
+      kind: "p",
+      text: "Ao longo das entrevistas que participei, uma pergunta sempre apareceu: “Qual é o seu processo de design?”",
+    },
+    {
+      kind: "p",
+      text: "Por muito tempo, tentei encontrar a melhor maneira de responder. Talvez esperassem ouvir sobre discovery, pesquisa, definição, ideação, prototipação, testes e delivery. Tudo organizado, com começo, meio e fim.",
+    },
+    {
+      kind: "q",
+      text: "Mas a verdade é que o processo de design raramente acontece dessa forma.",
+    },
+    {
+      kind: "p",
+      text: "Existem variáveis. Escopo, urgência, orçamento, maturidade do produto, prioridades de negócio, limitações técnicas e até a disponibilidade das pessoas envolvidas. Nem sempre temos tempo, recursos ou autonomia para executar tudo como aprendemos na teoria.",
+    },
+    { kind: "q", text: "E tudo bem. Isso também é fazer design." },
+    {
+      kind: "p",
+      text: "Às vezes, a realidade é sequer conseguir conversar com o usuário final. Sim, isso provavelmente seria decepcionante para a Amanda de 2021, que estudava design centrado no usuário e imaginava um cenário em que todas as decisões começariam com uma pesquisa bem estruturada.",
+    },
+    { kind: "a", text: "Mas e quando isso não é possível?" },
+    { kind: "a", text: "A gente encontra outros caminhos." },
+    {
+      kind: "p",
+      text: "Busca dados existentes, conversa com quem conhece a operação, analisa comportamentos, identifica riscos, trabalha com hipóteses e reconhece aquilo que ainda não sabe.",
+    },
+    {
+      kind: "p",
+      text: "Porque trabalhar com design não é simplesmente seguir um processo. É entender qual processo faz sentido para o problema que precisamos resolver, com os recursos que temos disponíveis.",
+    },
+    {
+      kind: "p",
+      text: "Outra frase que ouvi algumas vezes foi: “Escolha um produto em que você atuou de ponta a ponta e apresente no seu portfólio.”",
+    },
+    {
+      kind: "p",
+      text: "Mas existe uma questão importante nessa história: os produtos que desenvolvemos dentro das empresas não são nossos. Muitas vezes, não podemos compartilhar telas, informações estratégicas, dados internos ou decisões confidenciais.",
+    },
+    { kind: "a", text: "Então, o que sobra?" },
+    {
+      kind: "p",
+      text: "Para mim, sobra justamente o que há de mais valioso: o conhecimento construído ao longo do caminho.",
+    },
+    {
+      kind: "p",
+      text: "As perguntas que fizemos. Os problemas que identificamos. As decisões que precisamos defender. As hipóteses que não se confirmaram. Os caminhos que abandonamos. As negociações, os aprendizados e os resultados que conseguimos alcançar.",
+    },
+    {
+      kind: "p",
+      text: "E em uma era em que a inteligência artificial consegue gerar interfaces visualmente impressionantes em poucos segundos, tenho me perguntado cada vez mais: o que realmente diferencia o trabalho de um designer?",
+    },
+    {
+      kind: "q",
+      text: "Acredito que a resposta está menos na quantidade de telas que conseguimos produzir e mais na nossa capacidade de compreender problemas, conectar perspectivas e tomar decisões conscientes.",
+    },
+  ] as Block[],
+};
+
+function Essay() {
   return (
-    <div className="relative min-h-screen bg-background text-foreground font-sans antialiased overflow-x-hidden">
+    <div className="mt-20">
+      <div className="h-px w-full bg-gradient-to-r from-brand/40 via-brand/10 to-transparent mb-12" />
+
+      <h2 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-brand mb-6 leading-snug">
+        {essay.title}
+      </h2>
+
+      <p className="text-lg md:text-xl text-foreground/90 leading-relaxed mb-6 max-w-2xl">
+        {essay.lead}
+      </p>
+
+      <p className="font-display text-xl md:text-2xl text-brand mb-12 tracking-tight">
+        {essay.motto}
+      </p>
+
+      <div className="space-y-6 max-w-2xl">
+        {essay.blocks.map((block, i) => {
+          if (block.kind === "q") {
+            return (
+              <blockquote
+                key={i}
+                className="border-l-2 border-brand/60 pl-5 py-1 text-lg md:text-xl text-brand font-medium leading-relaxed"
+              >
+                {block.text}
+              </blockquote>
+            );
+          }
+          if (block.kind === "a") {
+            return (
+              <p key={i} className="text-base md:text-lg text-foreground font-medium leading-relaxed pt-2">
+                {block.text}
+              </p>
+            );
+          }
+          return (
+            <p key={i} className="text-[15px] md:text-base text-muted-foreground leading-relaxed">
+              {block.text}
+            </p>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function Index() {
+  return (
+    <div className="relative min-h-screen bg-background text-foreground font-sans antialiased overflow-x-clip">
       {/* Ambient background */}
       <div className="pointer-events-none fixed inset-0 -z-10">
         <div className="absolute -top-40 -right-40 w-[640px] h-[640px] rounded-full bg-brand/15 blur-[140px]" />
@@ -67,40 +174,10 @@ function Index() {
         <div className="absolute bottom-[-10%] right-[10%] w-[480px] h-[480px] rounded-full bg-[#B152E0]/[0.06] blur-[140px]" />
       </div>
 
-      {/* Floating pill header */}
-      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
-        <nav
-          className={`flex items-center gap-1 px-1.5 py-1.5 backdrop-blur-xl border rounded-full transition-all duration-500 ${
-            scrolled
-              ? "bg-white/[0.06] border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
-              : "bg-card/70 border-white/[0.08] shadow-[0_12px_40px_rgba(0,0,0,0.45)]"
-          }`}
-        >
-          <a
-            href="#sobre"
-            className="text-[13px] font-medium px-5 py-2 rounded-full text-foreground/80 hover:text-foreground hover:bg-white/5 transition-colors"
-          >
-            Sobre mim
-          </a>
-          <a
-            href="#cases"
-            className="text-[13px] font-medium px-5 py-2 rounded-full text-foreground/80 hover:text-foreground hover:bg-white/5 transition-colors"
-          >
-            Cases
-          </a>
-          <a
-            href="#contato"
-            className="text-[13px] font-medium px-5 py-2 rounded-full text-foreground/80 hover:text-foreground hover:bg-white/5 transition-colors"
-          >
-            Contato
-          </a>
-        </nav>
-      </header>
-
-      <main className="max-w-6xl mx-auto px-6 pt-40 pb-24">
-        {/* Sobre Mim — duas seções: texto à esquerda, portfólio à direita */}
+      <main className="max-w-6xl mx-auto px-6 pt-24 pb-24">
+        {/* Sobre Mim — texto à esquerda, portfólio à direita */}
         <section id="sobre" className="mb-40 scroll-mt-28">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Esquerda — texto introdutório */}
             <div className="lg:col-span-7">
               <h1 className="font-display text-4xl md:text-6xl font-bold tracking-tight mb-10 max-w-3xl leading-[1.08] text-balance">
@@ -129,7 +206,7 @@ function Index() {
                 </p>
               </div>
 
-              <div className="mt-14">
+              <div className="mt-14 max-w-2xl">
                 <h2 className="font-display text-[18px] font-semibold mb-6 text-brand uppercase tracking-[0.16em]">
                   Minha abordagem de produto
                 </h2>
@@ -145,10 +222,15 @@ function Index() {
                   ))}
                 </ul>
               </div>
+
+              <div className="max-w-2xl">
+                <Essay />
+              </div>
             </div>
 
             {/* Direita — acesso ao portfólio com thumbnail */}
-            <div className="lg:col-span-5 lg:sticky lg:top-32">
+            <div className="lg:col-span-5">
+              <div className="lg:sticky lg:top-32">
               <a
                 href={FIGMA_LINK}
                 target="_blank"
@@ -185,50 +267,8 @@ function Index() {
                   </div>
                 </div>
               </a>
+              </div>
             </div>
-          </div>
-        </section>
-
-        {/* Cases */}
-        <section id="cases" className="mb-40 scroll-mt-28">
-          <div className="mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-brand">
-              Cases &amp; Experiência
-            </h2>
-          </div>
-
-          <div className="max-w-3xl space-y-5 text-muted-foreground leading-relaxed">
-            <p>
-              Tenho experiência em produtos digitais voltados à eficiência operacional,
-              automação e soluções com Inteligência Artificial, atuando de ponta a ponta em
-              contextos complexos e de alta ambiguidade. Ao longo da minha trajetória, fiz a
-              ponte entre negócio, produto e engenharia para transformar problemas complexos
-              em soluções escaláveis, viáveis tecnicamente e centradas no usuário.
-            </p>
-            <p>
-              Atuei em projetos como o{" "}
-              <strong className="text-foreground font-medium">IA Ajuda</strong> e{" "}
-              <strong className="text-foreground font-medium">IA GOV</strong>, focados em
-              otimizar acesso à informação e reduzir esforço operacional através de IA,
-              participando desde discovery e definição de requisitos até fluxos e experiência
-              do produto.
-            </p>
-            <p>
-              Também liderei a construção de uma{" "}
-              <strong className="text-foreground font-medium">
-                ferramenta de análise de avarias para a Porsche
-              </strong>
-              , onde usuários enviavam fotos de danos em veículos de corrida e a IA auxiliava
-              na identificação de peças comprometidas e serviços necessários para reparo.
-            </p>
-            <p>
-              Além disso, trabalhei na evolução de um{" "}
-              <strong className="text-foreground font-medium">
-                sistema de precificação em ambiente corporativo complexo
-              </strong>
-              , mediando áreas técnicas e de negócio, estruturando requisitos e priorizando
-              soluções com foco em impacto, escalabilidade e usabilidade.
-            </p>
           </div>
         </section>
 

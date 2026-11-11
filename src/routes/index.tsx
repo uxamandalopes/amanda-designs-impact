@@ -32,6 +32,9 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const FIGMA_LINK =
+  "https://www.figma.com/proto/XWi2ISKGtdxeRDK4QS0DoT/Product-Designer---Portfolio?node-id=32-13&t=P6R4vazo0rPNO39P-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=32%3A13";
+
 const approach = [
   "Discovery orientado a impacto",
   "Design baseado em dados",
@@ -95,49 +98,94 @@ function Index() {
       </header>
 
       <main className="max-w-6xl mx-auto px-6 pt-40 pb-24">
-        {/* Sobre Mim */}
+        {/* Sobre Mim — duas seções: texto à esquerda, portfólio à direita */}
         <section id="sobre" className="mb-40 scroll-mt-28">
-          <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tight mb-14 max-w-4xl leading-[1.04] text-balance">
-            Transformando problemas complexos em produtos digitais{" "}
-            <span className="relative text-brand">
-              estratégicos
-              <span className="absolute inset-x-0 -bottom-1 h-3 bg-brand/25 blur-xl" />
-            </span>
-            .
-          </h1>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            {/* Esquerda — texto introdutório */}
+            <div className="lg:col-span-7">
+              <h1 className="font-display text-4xl md:text-6xl font-bold tracking-tight mb-10 max-w-3xl leading-[1.08] text-balance">
+                Transformando problemas complexos em produtos digitais{" "}
+                <span className="relative text-brand">
+                  estratégicos
+                  <span className="absolute inset-x-0 -bottom-1 h-3 bg-brand/25 blur-xl" />
+                </span>
+                .
+              </h1>
 
-          <div className="max-w-3xl space-y-6">
-            <p className="text-lg md:text-xl text-foreground/75 leading-relaxed">
-              Sou <span className="text-foreground font-medium">Amanda</span>, Product
-              Designer Sênior com 4+ anos de experiência no desenvolvimento de produtos
-              digitais B2B e B2C, conectando estratégia de negócio, tecnologia e
-              experiência do usuário para construir soluções com impacto real.
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              Atuo em contextos complexos e orientados a dados, conduzindo iniciativas
-              end-to-end, da descoberta à entrega, com forte colaboração entre áreas,
-              mediação de stakeholders e foco em escalabilidade, eficiência operacional e
-              evolução contínua dos produtos. Meu background técnico fortalece minhas
-              trocas com engenharia e contribui para entregas mais alinhadas, estruturadas
-              e viáveis.
-            </p>
-          </div>
+              <div className="max-w-2xl space-y-6">
+                <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
+                  Sou <span className="text-foreground font-medium">Amanda</span>, Product
+                  Designer Sênior com 4+ anos de experiência no desenvolvimento de produtos
+                  digitais B2B e B2C, conectando estratégia de negócio, tecnologia e
+                  experiência do usuário para construir soluções com impacto real.
+                </p>
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                  Atuo em contextos complexos e orientados a dados, conduzindo iniciativas
+                  end-to-end, da descoberta à entrega, com forte colaboração entre áreas,
+                  mediação de stakeholders e foco em escalabilidade, eficiência operacional e
+                  evolução contínua dos produtos. Meu background técnico fortalece minhas
+                  trocas com engenharia e contribui para entregas mais alinhadas,
+                  estruturadas e viáveis.
+                </p>
+              </div>
 
-          <div className="mt-16">
-            <h2 className="font-display text-[18px] font-semibold mb-8 text-brand uppercase tracking-[0.16em]">
-              Minha abordagem de produto
-            </h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
-              {approach.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-center gap-3 text-sm md:text-base text-foreground/85 hover:text-foreground transition-colors py-3 border-b border-white/[0.06]"
-                >
-                  <span className="size-1.5 rounded-full bg-brand shadow-[0_0_8px_var(--brand)] shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+              <div className="mt-14">
+                <h2 className="font-display text-[18px] font-semibold mb-6 text-brand uppercase tracking-[0.16em]">
+                  Minha abordagem de produto
+                </h2>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
+                  {approach.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 text-sm md:text-[15px] text-foreground/85 hover:text-foreground transition-colors py-3 border-b border-white/[0.06]"
+                    >
+                      <span className="size-1.5 rounded-full bg-brand shadow-[0_0_8px_var(--brand)] shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Direita — acesso ao portfólio com thumbnail */}
+            <div className="lg:col-span-5 lg:sticky lg:top-32">
+              <a
+                href={FIGMA_LINK}
+                target="_blank"
+                rel="noreferrer"
+                className="group block relative"
+              >
+                <div className="absolute -inset-px rounded-[28px] bg-gradient-to-b from-brand/30 via-brand/10 to-transparent opacity-50 blur-md transition duration-700 group-hover:opacity-100" />
+                <div className="relative overflow-hidden rounded-[28px] bg-white/[0.025] backdrop-blur-xl border border-white/10 transition-all duration-500 group-hover:border-brand/40">
+                  <div className="w-full aspect-[4/3] overflow-hidden">
+                    <img
+                      src={portfolioCover}
+                      alt="Capa do portfólio de cases de Amanda Lopes"
+                      className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-7">
+                    <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand mb-3">
+                      Portfólio
+                    </p>
+                    <h3 className="font-sans text-[18px] font-semibold mb-2 tracking-tight">
+                      Acesse meu portfólio completo
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      Confira o detalhamento dos processos, decisões e resultados dos
+                      projetos.
+                    </p>
+                    <div className="mt-6 flex items-center gap-3 text-sm font-semibold text-brand">
+                      <span>Ver no Figma</span>
+                      <span className="size-9 rounded-full border border-white/15 flex items-center justify-center text-foreground transition-all duration-300 group-hover:bg-brand group-hover:border-brand group-hover:text-brand-foreground group-hover:shadow-[0_0_24px_var(--brand)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                        →
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
         </section>
 
@@ -149,31 +197,29 @@ function Index() {
             </h2>
           </div>
 
-          <div className="max-w-3xl space-y-5 text-muted-foreground leading-relaxed mb-16">
+          <div className="max-w-3xl space-y-5 text-muted-foreground leading-relaxed">
             <p>
               Tenho experiência em produtos digitais voltados à eficiência operacional,
               automação e soluções com Inteligência Artificial, atuando de ponta a ponta em
-              contextos complexos e de alta ambiguidade. Ao longo da minha trajetória, fiz
-              a ponte entre negócio, produto e engenharia para transformar problemas
-              complexos em soluções escaláveis, viáveis tecnicamente e centradas no
-              usuário.
+              contextos complexos e de alta ambiguidade. Ao longo da minha trajetória, fiz a
+              ponte entre negócio, produto e engenharia para transformar problemas complexos
+              em soluções escaláveis, viáveis tecnicamente e centradas no usuário.
             </p>
             <p>
               Atuei em projetos como o{" "}
               <strong className="text-foreground font-medium">IA Ajuda</strong> e{" "}
               <strong className="text-foreground font-medium">IA GOV</strong>, focados em
               otimizar acesso à informação e reduzir esforço operacional através de IA,
-              participando desde discovery e definição de requisitos até fluxos e
-              experiência do produto.
+              participando desde discovery e definição de requisitos até fluxos e experiência
+              do produto.
             </p>
             <p>
               Também liderei a construção de uma{" "}
               <strong className="text-foreground font-medium">
                 ferramenta de análise de avarias para a Porsche
               </strong>
-              , onde usuários enviavam fotos de danos em veículos de corrida e a IA
-              auxiliava na identificação de peças comprometidas e serviços necessários para
-              reparo.
+              , onde usuários enviavam fotos de danos em veículos de corrida e a IA auxiliava
+              na identificação de peças comprometidas e serviços necessários para reparo.
             </p>
             <p>
               Além disso, trabalhei na evolução de um{" "}
@@ -184,39 +230,6 @@ function Index() {
               soluções com foco em impacto, escalabilidade e usabilidade.
             </p>
           </div>
-
-          <a
-            href="https://www.figma.com/proto/XWi2ISKGtdxeRDK4QS0DoT/Product-Designer---Portfolio?node-id=32-13&t=P6R4vazo0rPNO39P-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=32%3A13"
-            target="_blank"
-            rel="noreferrer"
-            className="group block relative"
-          >
-            <div className="absolute -inset-px rounded-[28px] bg-gradient-to-b from-brand/30 via-brand/10 to-transparent opacity-50 blur-md transition duration-700 group-hover:opacity-100" />
-            <div className="relative overflow-hidden rounded-[28px] bg-white/[0.025] backdrop-blur-xl border border-white/10 transition-all duration-500 group-hover:border-brand/40">
-              <div className="w-full aspect-[21/9] overflow-hidden">
-                <img
-                  src={portfolioCover}
-                  alt="Capa do portfólio de cases de Amanda Lopes"
-                  className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-8 flex items-center justify-between gap-6">
-                <div>
-                  <h3 className="text-[18px] font-sans font-semibold mb-2 tracking-tight">
-                    Acesse meu portfólio completo
-                  </h3>
-                  <p className="text-muted-foreground text-sm md:text-base">
-                    Confira o detalhamento dos processos, decisões e resultados dos
-                    projetos.
-                  </p>
-                </div>
-                <div className="size-12 shrink-0 rounded-full border border-white/15 flex items-center justify-center transition-all duration-300 group-hover:bg-brand group-hover:border-brand group-hover:text-brand-foreground group-hover:shadow-[0_0_24px_var(--brand)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
-                  <span className="text-lg">→</span>
-                </div>
-              </div>
-            </div>
-          </a>
         </section>
 
         {/* Contato */}

@@ -34,20 +34,6 @@ export const Route = createFileRoute("/")({
 const FIGMA_LINK =
   "https://www.figma.com/proto/XWi2ISKGtdxeRDK4QS0DoT/Product-Designer---Portfolio?node-id=32-13&t=P6R4vazo0rPNO39P-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=32%3A13";
 
-const approach = [
-  "Discovery orientado a impacto",
-  "Design baseado em dados",
-  "Mediação entre negócio e tecnologia",
-  "Priorização estratégica",
-  "Facilitação de workshops",
-  "Construção colaborativa",
-  "UX Research quali/quanti",
-  "Escalabilidade e consistência",
-  "Handoff estruturado",
-  "Visão sistêmica",
-  "IA aplicada a produtos digitais",
-];
-
 type Block =
   | { kind: "p"; text: string }
   | { kind: "q"; text: string }
@@ -119,14 +105,12 @@ const essay = {
 
 function Essay() {
   return (
-    <div className="mt-20">
-      <div className="h-px w-full bg-gradient-to-r from-brand/40 via-brand/10 to-transparent mb-12" />
-
-      <h2 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-brand mb-6 leading-snug">
+    <div>
+      <h1 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-brand mb-8 leading-[1.12]">
         {essay.title}
-      </h2>
+      </h1>
 
-      <p className="text-lg md:text-xl text-foreground/90 leading-relaxed mb-6 max-w-2xl">
+      <p className="text-lg md:text-xl text-foreground/90 leading-relaxed mb-8 max-w-2xl">
         {essay.lead}
       </p>
 
@@ -180,52 +164,7 @@ function Index() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Esquerda — texto introdutório */}
             <div className="lg:col-span-7">
-              <h1 className="font-display text-4xl md:text-6xl font-bold tracking-tight mb-10 max-w-3xl leading-[1.08] text-balance">
-                Transformando problemas complexos em produtos digitais{" "}
-                <span className="relative text-brand">
-                  estratégicos
-                  <span className="absolute inset-x-0 -bottom-1 h-3 bg-brand/25 blur-xl" />
-                </span>
-                .
-              </h1>
-
-              <div className="max-w-2xl space-y-6">
-                <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
-                  Sou <span className="text-foreground font-medium">Amanda</span>, Product
-                  Designer Sênior com 4+ anos de experiência no desenvolvimento de produtos
-                  digitais B2B e B2C, conectando estratégia de negócio, tecnologia e
-                  experiência do usuário para construir soluções com impacto real.
-                </p>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Atuo em contextos complexos e orientados a dados, conduzindo iniciativas
-                  end-to-end, da descoberta à entrega, com forte colaboração entre áreas,
-                  mediação de stakeholders e foco em escalabilidade, eficiência operacional e
-                  evolução contínua dos produtos. Meu background técnico fortalece minhas
-                  trocas com engenharia e contribui para entregas mais alinhadas,
-                  estruturadas e viáveis.
-                </p>
-              </div>
-
-              <div className="mt-14 max-w-2xl">
-                <h2 className="font-display text-[18px] font-semibold mb-6 text-brand uppercase tracking-[0.16em]">
-                  Minha abordagem de produto
-                </h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
-                  {approach.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-center gap-3 text-sm md:text-[15px] text-foreground/85 hover:text-foreground transition-colors py-3 border-b border-white/[0.06]"
-                    >
-                      <span className="size-1.5 rounded-full bg-brand shadow-[0_0_8px_var(--brand)] shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="max-w-2xl">
-                <Essay />
-              </div>
+              <Essay />
             </div>
 
             {/* Direita — acesso ao portfólio com thumbnail */}

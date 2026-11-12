@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import portfolioCover from "@/assets/portfolio-cover.jpg";
+import amandaProfile from "@/assets/amanda-profile.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -260,13 +261,19 @@ function Index() {
 
               <div className="relative px-6 pb-6">
                 {/* foto de perfil */}
-                <div className="-mt-10 mb-4 size-20 rounded-full border-4 border-[#0b1116] bg-gradient-to-br from-brand to-[#B152E0] flex items-center justify-center text-2xl font-bold text-white shadow-lg">
-                  AL
-                </div>
+                <img
+                  src={amandaProfile.url}
+                  alt="Foto de perfil de Amanda Cristina"
+                  className="-mt-10 mb-4 size-20 rounded-full border-4 border-[#0b1116] object-cover shadow-lg"
+                />
 
-                <p className="text-lg font-bold tracking-tight">Amanda Cristina Lopes</p>
+                <p className="text-lg font-bold tracking-tight">Amanda Cristina</p>
                 <p className="mt-1 text-sm text-muted-foreground leading-snug">
-                  Product Designer Sênior · Produtos digitais B2B e B2C · IA aplicada a produtos
+                  Senior Product Designer | Product Discovery | UX Research | Product Strategy |
+                  UX/UI Design | AI Products
+                </p>
+                <p className="mt-1.5 text-xs text-muted-foreground/70">
+                  Belo Horizonte, Minas Gerais, Brasil
                 </p>
 
                 <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#0A66C2] px-5 py-2.5 text-[13px] font-bold text-white transition-all duration-300 group-hover:gap-3 group-hover:shadow-[0_0_26px_rgba(10,102,194,0.55)]">

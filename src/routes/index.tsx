@@ -40,8 +40,6 @@ type Block =
   | { kind: "a"; text: string };
 
 const essay = {
-  title: "O design que acontece fora do Figma.",
-  lead: "Fiquei pensando em como criar um portfólio que realmente fizesse sentido com a realidade do meu trabalho e que não precisasse parecer tão sério.",
   motto: "Design é arte de pensar.",
   blocks: [
     {
@@ -106,14 +104,6 @@ const essay = {
 function Essay() {
   return (
     <div>
-      <h1 className="font-display text-2xl md:text-[34px] font-bold tracking-tight text-brand mb-6 leading-[1.15]">
-        {essay.title}
-      </h1>
-
-      <p className="text-lg md:text-xl text-foreground/90 leading-relaxed mb-8 max-w-2xl">
-        {essay.lead}
-      </p>
-
       <p className="font-display text-xl md:text-2xl text-brand mb-12 tracking-tight">
         {essay.motto}
       </p>

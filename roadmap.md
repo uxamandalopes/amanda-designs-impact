@@ -4,3 +4,4 @@
 - [x] Retirar o texto da seção Cases
 - [x] Retirar a parte "Sobre mim" (título, bio e abordagens) — confirmado: tudo
 - [x] Manter: texto "O design que acontece fora do Figma" + card do portfólio + Contato
+- [x] Retirar o título "O design que acontece fora do Figma." e o parágrafo "Fiquei pensando em como criar um portfólio..."

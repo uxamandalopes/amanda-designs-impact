@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import portfolioCover from "@/assets/portfolio-cover.jpg";
 import amandaProfile from "@/assets/amanda-profile.png.asset.json";
+import amandaCover from "@/assets/amanda-cover.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -248,9 +249,14 @@ function Index() {
               rel="noreferrer"
               className="group relative block max-w-xl mx-auto overflow-hidden rounded-2xl border border-white/10 bg-[#0b1116] shadow-[0_28px_70px_-36px_rgba(0,0,0,0.9)] transition-all duration-500 hover:-translate-y-1 hover:border-[#0A66C2]/50 hover:shadow-[0_32px_80px_-32px_rgba(10,102,194,0.35)]"
             >
-              {/* faixa de capa estilo LinkedIn */}
-              <div className="relative h-20 bg-gradient-to-r from-[#0A66C2] via-brand to-[#B152E0]">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_120%,rgba(255,255,255,0.25),transparent_55%)]" />
+              {/* capa original do LinkedIn */}
+              <div className="relative h-20 overflow-hidden">
+                <img
+                  src={amandaCover.url}
+                  alt=""
+                  className="h-full w-full object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0b1116]/70 via-transparent to-transparent" />
                 {/* logo LinkedIn */}
                 <span className="absolute right-4 top-4 flex size-8 items-center justify-center rounded-lg bg-white/95 shadow-md transition-transform duration-500 group-hover:scale-110">
                   <svg viewBox="0 0 24 24" className="size-4.5 fill-[#0A66C2]" aria-hidden>

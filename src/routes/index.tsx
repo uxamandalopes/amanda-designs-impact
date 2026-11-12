@@ -240,30 +240,41 @@ function Index() {
               </p>
             </div>
 
-            <div className="relative flex flex-wrap justify-center gap-2.5">
-              <a
-                href="https://www.linkedin.com/in/amandacristinalopes/"
-                target="_blank"
-                rel="noreferrer"
-                className="px-7 py-4 bg-white/[0.04] border border-white/10 rounded-full text-sm font-semibold tracking-tight hover:bg-brand/10 hover:border-brand/40 transition-all hover:-translate-y-0.5"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="mailto:ux.amandalopes@gmail.com"
-                className="px-7 py-4 bg-white/[0.04] border border-white/10 rounded-full text-sm font-semibold tracking-tight hover:bg-brand/10 hover:border-brand/40 transition-all hover:-translate-y-0.5"
-              >
-                ux.amandalopes@gmail.com
-              </a>
-              <a
-                href="https://drive.google.com/file/d/1S_6FPUhZs5zQvaIX3Xt8nJTU4RM-1Q9T/view?usp=sharing"
-                target="_blank"
-                rel="noreferrer"
-                className="px-7 py-4 bg-brand text-brand-foreground rounded-full text-sm font-bold tracking-tight hover:shadow-[0_0_28px_var(--brand)] transition-all hover:-translate-y-0.5"
-              >
-                Currículo PDF
-              </a>
-            </div>
+            {/* Banner LinkedIn */}
+            <a
+              href="https://www.linkedin.com/in/amandacristinalopes/"
+              target="_blank"
+              rel="noreferrer"
+              className="group relative block max-w-xl mx-auto overflow-hidden rounded-2xl border border-white/10 bg-[#0b1116] shadow-[0_28px_70px_-36px_rgba(0,0,0,0.9)] transition-all duration-500 hover:-translate-y-1 hover:border-[#0A66C2]/50 hover:shadow-[0_32px_80px_-32px_rgba(10,102,194,0.35)]"
+            >
+              {/* faixa de capa estilo LinkedIn */}
+              <div className="relative h-20 bg-gradient-to-r from-[#0A66C2] via-brand to-[#B152E0]">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_120%,rgba(255,255,255,0.25),transparent_55%)]" />
+                {/* logo LinkedIn */}
+                <span className="absolute right-4 top-4 flex size-8 items-center justify-center rounded-lg bg-white/95 shadow-md transition-transform duration-500 group-hover:scale-110">
+                  <svg viewBox="0 0 24 24" className="size-4.5 fill-[#0A66C2]" aria-hidden>
+                    <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z" />
+                  </svg>
+                </span>
+              </div>
+
+              <div className="relative px-6 pb-6">
+                {/* foto de perfil */}
+                <div className="-mt-10 mb-4 size-20 rounded-full border-4 border-[#0b1116] bg-gradient-to-br from-brand to-[#B152E0] flex items-center justify-center text-2xl font-bold text-white shadow-lg">
+                  AL
+                </div>
+
+                <p className="text-lg font-bold tracking-tight">Amanda Cristina Lopes</p>
+                <p className="mt-1 text-sm text-muted-foreground leading-snug">
+                  Product Designer Sênior · Produtos digitais B2B e B2C · IA aplicada a produtos
+                </p>
+
+                <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#0A66C2] px-5 py-2.5 text-[13px] font-bold text-white transition-all duration-300 group-hover:gap-3 group-hover:shadow-[0_0_26px_rgba(10,102,194,0.55)]">
+                  Ver perfil no LinkedIn
+                  <span aria-hidden>→</span>
+                </span>
+              </div>
+            </a>
           </div>
         </section>
       </main>
